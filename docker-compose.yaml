@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: emspractice-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: emspractice
+      MYSQL_DATABASE: emspractice
+      MYSQL_USER: emspractice
+      MYSQL_PASSWORD: emspractice
+    ports:
+      - "3308:3306"
+    volumes:
+      - emspractice_mysql_data:/var/lib/mysql
+
+volumes:
+  emspractice_mysql_data:
